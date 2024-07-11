@@ -1,0 +1,154 @@
+<!--DOM 
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DOM and HTML Example</title>
+
+  <!-- CSS 
+  <link rel="stylesheet" href="styles.css"> 
+  -->
+  <style>
+
+/* logo */
+.logo {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  max-width: 120px;
+  max-height: 100px;
+}
+
+
+    /* 背景圖片 */
+    body {
+      background-image: url('image/mac\ os\ 01.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      height: 100vh;
+    } 
+
+    /* 標題樣式 */
+    h1 {
+      color: #67b600;
+      font-size: 80px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    /* 突出標題中的關鍵文字 */
+    .title-highlight {
+  font-weight: bold; /* 設置字體粗細為粗體 */
+  color: #007bff; /* 設置字體顏色為藍色 */
+  margin-left: 10px; /* 在左側添加 10 像素的外邊距,與「歡迎來到」文字隔開 */
+}
+
+    /* 段落樣式 */
+    p {
+      color: #333;
+      font-size: 40px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    /* 按鈕樣式 */
+    button {
+  background-color: #0077b6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 26px;
+  cursor: pointer;
+  margin-top: 30px; /* 添加 50 像素的上邊距,將按鈕向下移動 */
+}
+
+
+    button:hover {
+      background-color: #8e8c00;
+    }
+
+    /* 字體 */
+    .content {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: red; /* 設置文字顏色為紅色 */
+      /*background-color: black; /* 設置背景顏色為黑色 */
+      padding: 20px; /* 添加一些內邊距,使文字與背景有一定距離 */
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      font-size: 3rem;
+      font-weight: bold;
+    }
+  
+    /* 字體AUTO */
+    #title {
+  font-size: 5vw; /* 使用相對單位 vw,字體大小為視窗寬度的 5% */
+  font-weight: bold; /* 設置字體粗細為粗體 */
+  text-align: center; /* 文本水平置中對齊 */
+  margin-top: 1px; /* 上方添加 50 像素的外邊距 */
+  display: flex; /* 使用 Flexbox 佈局 */
+  
+}
+
+
+  /* justify-content: center; /* 水平置中對齊 Flexbox 項目 
+  align-items: center; /* 垂直置中對齊 Flexbox 項目 */
+
+  </style>
+</head>
+
+<body>
+
+<!-- 圖像元素應該放在這裡 -->
+  <img src="image/Rich Man 01.jpg" alt="Logo" class="logo">
+
+  <!-- 標題元素 -->
+  <h1 id="title">Welcome to <span class="title-highlight">Rich Man Website</span></h1>
+
+  
+  <!-- 段落元素 -->
+  <p id="message">Click the button to change the message.</p>
+
+  <!-- 按鈕元素 -->
+  <button onclick="changeMessage()">Click me</button>
+  
+ <div class="content"> Thanks Kevinlaw
+
+<!--JavaScript
+<script src="script.js"></script>
+-->
+
+    <script>
+        function changeMessage() {
+          // 透過 DOM API 獲取 id 為 "message" 的元素
+          var messageElement = document.getElementById("message");
+          
+          // 定義一個包含不同文字的數組
+          var messages = [
+            "Click the button to change the message.",
+            "The message for RICH MAN!!!!!!"
+          ];
+          
+          // 獲取當前文字在數組中的索引
+          var currentIndex = messages.indexOf(messageElement.textContent);
+          
+          // 如果當前文字是數組中的第一個元素
+          if (currentIndex === 0) {
+            // 將文字更改為數組中的第二個元素
+            messageElement.textContent = messages[1];
+          } else {
+            // 否則,將文字更改為數組中的第一個元素
+            messageElement.textContent = messages[0];
+          }
+        }
+      </script>
+      
+</body>
+</html>
